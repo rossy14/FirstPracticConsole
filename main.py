@@ -4,7 +4,6 @@ tasks = []
 
 #Listar todas Las Tareas
 
-
 def verTareas(tasks):
   borrarPantalla()
   if len(tasks) == 0:
@@ -14,7 +13,6 @@ def verTareas(tasks):
     #tasks.reverse()
     for task in tasks:
       print(f"{tasks.index(task)} - {task}")
-
 
 #Agregar una Nueva Tarea
 def agregarTareas(tasks, task):
@@ -27,14 +25,11 @@ def eliminarTareas(index):
   tasks.pop(index)
   print("Tarea eliminada con éxito!")
 
-
-def borrarPantalla(
-):  #Definimos la función estableciendo el nombre que queramos
+def borrarPantalla():
   if os.name == "posix":
     os.system("clear")
   elif os.name == "ce" or os.name == "nt" or os.name == "dos":
     os.system("cls")
-
 
 def menu(tasks):
   borrarPantalla()
@@ -53,12 +48,10 @@ def menu(tasks):
   else:
     print("Ingrese una opción valida")
 
-
 def regresarMenuPrincipal(tasks):
   regresar = input("Regresar al menu principal s\\n => ").lower()
   if regresar == "s":
     menu(tasks)
-
 
 def opciones(opcion, tasks):
   if opcion == 1:
@@ -92,7 +85,7 @@ def opciones(opcion, tasks):
           eliminarTareas(index)
           verTareas(tasks)
         except:
-          print("Error, indicar un numero de tarea valido")
+          print("Error, indicar un numero de tarea válido")
 
   regresarMenuPrincipal(tasks)
 
