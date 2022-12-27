@@ -1,26 +1,23 @@
 import os
 
 tasks = []
+#Práctica del manejo de Listas, programa para manejar tareas pendientes.
 
 #Listar todas Las Tareas
-
 def verTareas(tasks):
   borrarPantalla()
   if len(tasks) == 0:
     print("No tiene tareas pendiente")
   else:
     print("Tareas Pendientes:")
-    #tasks.reverse()
     for task in tasks:
       print(f"{tasks.index(task)} - {task}")
 
 #Agregar una Nueva Tarea
 def agregarTareas(tasks, task):
   tasks.append(task)
-  #return tasks
-
-
-  #eliminarIndex
+  
+#eliminarIndex
 def eliminarTareas(index):
   tasks.pop(index)
   print("Tarea eliminada con éxito!")
@@ -33,8 +30,7 @@ def borrarPantalla():
 
 def menu(tasks):
   borrarPantalla()
-  print("****Menu Pricipal****")
-
+  print("****Menú Pricipal****")
   print(
     "1- Ver todas las tareas pendientes\n2- Agregar una nueva tarea \n3- Eliminar una tarea"
   )
